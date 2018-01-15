@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export CFLAGS := $(shell dpkg-buildflags --get CFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
+export CXXFLAGS := $(shell dpkg-buildflags --get CXXFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
+export LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
+export QT_SELECT := qt5
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_configure:
+	qmake QT_BUILD_PARTS+=tests
+
+override_dh_auto_install:
+	dh_auto_install
+
+	# We do not ship CMake files for plugins.
+	rm -vf $(CURDIR)/debian/tmp/usr/lib/*/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake
+
+override_dh_install:
+	dh_install --fail-missing
+
+override_dh_auto_test-arch:
+	xvfb-run -a \
+	         -s "-screen 0 1024x768x24 +extension RANDR +extension RENDER +extension GLX" \
+	         dh_auto_test --max-parallel=1 -- -k -Ctests/auto \
+	         QT_PLUGIN_PATH=$(CURDIR) QML2_IMPORT_PATH=$(CURDIR)/qml \
+	         HOME=$(CURDIR) LD_LIBRARY_PATH=$(CURDIR)/lib
+
+
+override_dh_clean:
+	rm -f src/virtualkeyboard/layouts.qrc
+	dh_clean

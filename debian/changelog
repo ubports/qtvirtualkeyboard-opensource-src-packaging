@@ -1,0 +1,58 @@
+qtvirtualkeyboard-opensource-src (5.9.1+dfsg-3ubports1) xenial; urgency=medium
+
+  * Import to UBports
+
+ -- Marius Gripsgard <marius@ubports.com>  Mon, 15 Jan 2018 07:49:07 +0100
+
+qtvirtualkeyboard-opensource-src (5.9.1+dfsg-3) unstable; urgency=medium
+
+  * Disable failing test, see https://bugreports.qt.io/browse/QTBUG-61279.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 17 Aug 2017 11:36:23 -0300
+
+qtvirtualkeyboard-opensource-src (5.9.1+dfsg-2) unstable; urgency=medium
+
+  * Merge release 5.7.1+dfsg-2 into the experimental branch. The repeated
+    changelog entries where kept due to both packages introducing them in
+    separate places.
+  * Release to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 16 Aug 2017 15:42:04 -0300
+
+qtvirtualkeyboard-opensource-src (5.9.1+dfsg-1) experimental; urgency=medium
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Add pkg-config as a build dependency, it is used to detect the system's
+    hunspell.
+  * Revert the internal dependencies order: it's the plugin that needs the
+    QML module and not the other way around.
+
+  [ Dmitry Shachnev ]
+  * New upstream release.
+  * Bump Qt build-dependencies to 5.9.1.
+  * Do not exclude the whole src/virtualkeyboard/3rdparty/ directory from
+    the tarball, but only its tcime and pinyin subdirectories.
+  * Drop disable_third_party.patch, third-party stuff is already disabled
+    by default (except hunspell).
+  * Update debian/copyright.
+  * Bump Standards-Version to 4.0.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 16 Jul 2017 22:03:40 +0300
+
+qtvirtualkeyboard-opensource-src (5.7.1+dfsg-2) unstable; urgency=medium
+
+  * Add pkg-config as a build dependency, it is used to detect the system's
+    hunspell.
+  * Revert the internal dependencies order: it's the plugin that needs the
+    QML module and not the other way around.
+  * Add hunspell-en-gb as a test build dependency, is it used to check
+    hunspell's functionality.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sun, 16 Jul 2017 18:13:31 -0300
+
+qtvirtualkeyboard-opensource-src (5.7.1+dfsg-1) unstable; urgency=medium
+
+  * Initial release (Closes: #697509).
+    - Based on previous work by Jonathan Riddell and Bhushan Shah.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 24 Jun 2017 19:45:25 -0300
