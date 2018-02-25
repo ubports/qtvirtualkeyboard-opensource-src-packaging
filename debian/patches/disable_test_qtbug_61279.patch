@@ -1,7 +1,7 @@
 Description: disable failing test
  This test has been seen to fail, see QTBUG-61279.
 Bug-Qt: https://bugreports.qt.io/browse/QTBUG-61279
-Author: Dmitry Schanev <mitya57@debian.org>
+Author: Dmitry Shachnev <mitya57@debian.org>
 
 ---
  tests/auto/inputpanel/data/tst_inputpanel.qml |    2 +-
@@ -9,7 +9,7 @@ Author: Dmitry Schanev <mitya57@debian.org>
 
 --- a/tests/auto/inputpanel/data/tst_inputpanel.qml
 +++ b/tests/auto/inputpanel/data/tst_inputpanel.qml
-@@ -1619,7 +1619,7 @@ Rectangle {
+@@ -1621,7 +1621,7 @@
  
          function test_wclAutoCommitWordSetting_data() {
              return [

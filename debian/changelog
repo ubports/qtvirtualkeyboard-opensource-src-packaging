@@ -1,8 +1,32 @@
-qtvirtualkeyboard-opensource-src (5.9.1+dfsg-3ubports1) xenial; urgency=medium
+qtvirtualkeyboard-opensource-src (5.9.3+dfsg-0ubports3) xenial; urgency=medium
 
-  * Import to UBports
+  * Build for xenial 
 
- -- Marius Gripsgard <marius@ubports.com>  Mon, 15 Jan 2018 07:49:07 +0100
+ -- Marius <mariogrip@ubuntu.com>  Sun, 25 Feb 2018 01:17:56 +0100
+
+qtvirtualkeyboard-opensource-src (5.9.3+dfsg-0ubuntu2) bionic; urgency=medium
+
+  * Disable tests on arm64 because they're spotty.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sun, 10 Dec 2017 11:58:52 -0600
+
+qtvirtualkeyboard-opensource-src (5.9.3+dfsg-0ubuntu1) bionic; urgency=medium
+
+  * New upstream release.
+  * Update Standards-version to 4.1.2, no changes needed.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 30 Nov 2017 22:44:10 -0600
+
+qtvirtualkeyboard-opensource-src (5.9.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh disable_test_qtbug_61279.patch.
+  * Bump Qt build-dependencies to 5.9.2.
+  * Use debhelper compat level 10 and dh_missing.
+  * Drop unneeded pkg-kde-tools build-dependency.
+  * Bump Standards-Version to 4.1.1.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 27 Oct 2017 21:47:09 +0300
 
 qtvirtualkeyboard-opensource-src (5.9.1+dfsg-3) unstable; urgency=medium
 
@@ -13,7 +37,7 @@ qtvirtualkeyboard-opensource-src (5.9.1+dfsg-3) unstable; urgency=medium
 qtvirtualkeyboard-opensource-src (5.9.1+dfsg-2) unstable; urgency=medium
 
   * Merge release 5.7.1+dfsg-2 into the experimental branch. The repeated
-    changelog entries where kept due to both packages introducing them in
+    changelog entries were kept due to both packages introducing them in
     separate places.
   * Release to unstable.
 

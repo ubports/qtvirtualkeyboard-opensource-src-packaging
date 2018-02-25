@@ -1,24 +1,24 @@
 Source: qtvirtualkeyboard-opensource-src
 Priority: optional
-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>,
            Dmitry Shachnev <mitya57@debian.org>
 Build-Depends: debhelper (>= 9),
                hunspell-en-gb <!nocheck>,
                libhunspell-dev,
-               libqt5svg5-dev (>= 5.9.1~),
+               libqt5svg5-dev (>= 5.9.3~),
                pkg-config,
-               pkg-kde-tools,
                qml-module-qt-labs-folderlistmodel,
                qml-module-qtquick-layouts,
                qml-module-qtquick-window2,
                qml-module-qttest,
-               qtbase5-dev (>= 5.9.1+dfsg~),
-               qtbase5-private-dev (>= 5.9.1+dfsg~),
-               qtdeclarative5-dev (>= 5.9.1~),
+               qtbase5-dev (>= 5.9.3+dfsg~),
+               qtbase5-private-dev (>= 5.9.3+dfsg~),
+               qtdeclarative5-dev (>= 5.9.3~),
                xauth,
                xvfb
-Standards-Version: 4.0.0
+Standards-Version: 4.1.2
 Section: libs
 Homepage: http://doc.qt.io/qt-5/qtvirtualkeyboard-index.html
 Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt/qtvirtualkeyboard.git
