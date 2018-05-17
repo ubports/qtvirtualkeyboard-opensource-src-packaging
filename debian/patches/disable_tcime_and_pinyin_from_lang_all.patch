@@ -1,0 +1,30 @@
+Description: disable building languages requiring non-DFSG compliant 3rdparty code
+ Some langs require 3rd party code not complaint with the DFSG, so remove them
+ when building with lang-all.
+Author: Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>
+Last-Update: 2018-03-22
+
+---
+ src/config.pri |    6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+--- a/src/config.pri
++++ b/src/config.pri
+@@ -43,16 +43,12 @@
+         lang-pt_PT \
+         lang-ro_RO \
+         lang-ru_RU \
+-        lang-sv_SE \
+-        lang-zh_CN \
+-        lang-zh_TW
++        lang-sv_SE
+ }
+ 
+ # Enable features by languages
+ contains(CONFIG, lang-ja.*)|lang-all: CONFIG += openwnn
+ contains(CONFIG, lang-ko.*)|lang-all: CONFIG += hangul
+-contains(CONFIG, lang-zh(_CN)?)|lang-all: CONFIG += pinyin
+-contains(CONFIG, lang-zh(_TW)?)|lang-all: CONFIG += tcime
+ 
+ # Feature dependencies
+ tcime {

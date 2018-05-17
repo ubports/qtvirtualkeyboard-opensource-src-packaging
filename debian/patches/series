@@ -1,1 +1,2 @@
 disable_test_qtbug_61279.patch
+disable_tcime_and_pinyin_from_lang_all.patch

@@ -1,8 +1,35 @@
-qtvirtualkeyboard-opensource-src (5.9.3+dfsg-0ubports3) xenial; urgency=medium
+qtvirtualkeyboard-opensource-src (5.9.5+dfsg-0ubports1) xenial; urgency=medium
 
-  * Build for xenial 
+  * New upstream release.
 
- -- Marius <mariogrip@ubuntu.com>  Sun, 25 Feb 2018 01:17:56 +0100
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 14 Apr 2018 15:54:12 -0500
+
+qtvirtualkeyboard-opensource-src (5.9.4+dfsg-0ubuntu3) bionic; urgency=medium
+
+  * Disable arrow-key-navigation support introduced as an optional extra
+    the in last upload. This breaks using the enter key to action login
+    in some cases. (LP #1762472)
+
+ -- Rik Mills <rikmills@kubuntu.org>  Sat, 14 Apr 2018 08:59:14 +0100
+
+qtvirtualkeyboard-opensource-src (5.9.4+dfsg-0ubuntu2) bionic; urgency=medium
+
+  * Cherry pick changes from debian experimental
+    - Support all languages except those that need non DFSG compliant 3rd
+      party code.
+    - Enable handwriting support.
+    - Enable navigation with arrow keys and enter.
+    - Make tests non-fatal. The failing ones are really flaky and it seems
+      not that easy to patch them out so let's ignore them for now. We can
+      reenable them once upstream solves the related bugs.
+
+ -- Rik Mills <rikmills@kubuntu.org>  Thu, 22 Mar 2018 19:56:47 +0000
+
+qtvirtualkeyboard-opensource-src (5.9.4+dfsg-0ubuntu1) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sun, 25 Feb 2018 20:11:26 -0600
 
 qtvirtualkeyboard-opensource-src (5.9.3+dfsg-0ubuntu2) bionic; urgency=medium
 

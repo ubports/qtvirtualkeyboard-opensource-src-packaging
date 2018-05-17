@@ -12,7 +12,7 @@ export QT_SELECT := qt5
 	dh $@ --parallel
 
 override_dh_auto_configure:
-	qmake QT_BUILD_PARTS+=tests
+	qmake QT_BUILD_PARTS+=tests CONFIG+="lang-all handwriting"
 
 override_dh_auto_install:
 	dh_auto_install
@@ -27,7 +27,7 @@ override_dh_auto_test-arch:
 ifeq ($(DEB_HOST_ARCH), arm64)
 # Don't run the tests on arm64, they're spotty.
 else
-	xvfb-run -a \
+	-xvfb-run -a \
 	         -s "-screen 0 1024x768x24 +extension RANDR +extension RENDER +extension GLX" \
 	         dh_auto_test --max-parallel=1 -- -k -Ctests/auto \
 	         QT_PLUGIN_PATH=$(CURDIR) QML2_IMPORT_PATH=$(CURDIR)/qml \
